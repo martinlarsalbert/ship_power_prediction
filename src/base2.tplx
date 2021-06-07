@@ -1,0 +1,60 @@
+((=- Latex base template (must inherit)
+This template builds upon the abstract template, adding common latex output
+functions. Figures, data_text,
+This template defines defines a default docclass, the inheriting class should
+override this.-=))
+
+((*- extends 'document_contents.tplx' -*))
+
+%===============================================================================
+% Abstract overrides
+%===============================================================================
+
+((*- block header -*))
+    
+    ((* block docclass *))\documentclass[11pt]{article}((* endblock docclass *))
+
+    ((* block packages *))
+    
+    \usepackage{martins} % own defined packages in this file.
+
+    ((* endblock packages *))
+
+    ((* block definitions *))
+    
+    % Document parameters
+    % Document title
+    ((* block title -*))
+    ((*- set nb_title = nb.metadata.get('title', '') or resources['metadata']['name'] -*))
+    \title{((( nb_title | escape_latex )))}
+    ((*- endblock title *))
+    ((* block date *))((* endblock date *))
+    ((* block author *))
+    ((* if 'authors' in nb.metadata *))
+    \author{((( nb.metadata.authors | join(', ', attribute='name') )))}
+    ((* endif *))
+    ((* endblock author *))
+    ((* endblock definitions *))
+
+    ((* block commands *))
+    ((* block margins *))
+    
+	((* endblock margins *))
+    ((* endblock commands *))
+((* endblock header *))
+
+((* block body *))
+\begin{document}
+    ((* block predoc *))
+    ((* block maketitle *))\maketitle((* endblock maketitle *))
+    ((* block abstract *))((* endblock abstract *))
+    ((* endblock predoc *))
+
+    ((( super() )))
+
+    % Add a bibliography block to the postdoc
+    ((* block postdoc *))
+    ((* block bibliography *))((* endblock bibliography *))
+    ((* endblock postdoc *))
+\end{document}
+((* endblock body *))

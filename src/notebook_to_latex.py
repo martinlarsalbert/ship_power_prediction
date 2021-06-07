@@ -162,7 +162,7 @@ def tree_writer(body:str, build_directory:str, save_main=True):
     pre, document, end = split_parts(body=body)
     sections = splitter_section(document=document)
 
-    main = '%s\n\\begin{document}\n' % pre
+    main = '%s\n\\begin{document}\n\maketitle\n' % pre
     
     for section_name, section_ in sections.items():
         
@@ -184,7 +184,7 @@ def tree_writer(body:str, build_directory:str, save_main=True):
         
     main+='\n\\end{document}%s' % end
 
-    main_file_name = 'parts.tex'
+    main_file_name = 'main.tex'
     main_file_path = os.path.join(build_directory, main_file_name)
     if save_main:
         with open(main_file_path, mode='w') as file:

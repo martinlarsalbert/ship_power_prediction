@@ -1,4 +1,4 @@
-((*- extends 'article.tplx' -*))
+((*- extends 'base2.tplx' -*))
 
 ((*- block data_pdf -*))
 ((*- if 'application/pdf' in output.metadata.filenames: -*))

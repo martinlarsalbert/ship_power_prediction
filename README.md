@@ -1,9 +1,7 @@
-Martin's project template
+Ship power prediction
 ==============================
 
-This is a project template, including some nice things to conduct research, such as:
-* loggbook over research
-* report writing in jupyter notebook with conversion to LaTeX report.
+This is an assignment in Chalmers course FMMS050 in Machine Learning. In this project a ship power prediction model should be developed, based on some provided in service data for a ship.
 
 Project Organization
 ------------
