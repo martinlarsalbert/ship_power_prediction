@@ -3,6 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.feature_selection import SelectKBest
 from sympy.parsing.sympy_parser import parse_expr
+import sklearn.pipeline
 import sympy as sp
 import numpy as np
 
