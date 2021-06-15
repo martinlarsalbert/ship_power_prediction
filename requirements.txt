@@ -21,3 +21,5 @@ rolldecay-estimators
 pykalman
 plotly==4.14.3
 ipywidgets>=7.5
+mlflow
+papermill
