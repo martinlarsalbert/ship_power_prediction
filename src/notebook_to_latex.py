@@ -107,7 +107,9 @@ class FigureName(Preprocessor):
                         if output_meta_data is None:
                             continue
 
-                        filenames = output_meta_data['filenames']
+                        filenames = output_meta_data.get('filenames',None)
+                        if not filenames:
+                            continue
 
                         output_name = 'output_%i_%i' % (cell_id, output_id)
                         for key, value in filenames.items():

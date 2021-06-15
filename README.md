@@ -3,6 +3,8 @@ Ship power prediction
 
 This is an assignment in Chalmers course FMMS050 in Machine Learning. In this project a ship power prediction model should be developed, based on some provided in service data for a ship.
 
+
+
 Project Organization
 ------------
 
