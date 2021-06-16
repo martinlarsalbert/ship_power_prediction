@@ -3,7 +3,7 @@ from sklearn.model_selection import TimeSeriesSplit
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
-def get_train_test(data:pd.DataFrame, rolling=True, label='Power', test_size=0.2):
+def get_train_test(data:pd.DataFrame, rolling=True, label='Power', test_size=0.2, random_state=42):
     """[summary]
 
     Args:
@@ -19,7 +19,7 @@ def get_train_test(data:pd.DataFrame, rolling=True, label='Power', test_size=0.2
         return get_train_test_rolling(data=data, label=label, test_size=test_size)
     else:
         X,y = get_X_y(data=data, label=label)
-        return train_test_split(X, y, test_size=test_size, random_state=42)
+        return train_test_split(X, y, test_size=test_size, random_state=random_state)
 
 def get_cross_validation(n_splits=6, n_repeats=10, rolling=True, shuffle=False):
     if rolling:
